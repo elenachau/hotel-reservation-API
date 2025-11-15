@@ -1,9 +1,6 @@
-from dataclasses import dataclass
-from datetime import date
 from fastapi import FastAPI
 
-from hotel.db.engine import DBSession, init_db
-from hotel.db.models import DBRoom
+from hotel.db.engine import init_db
 from hotel.routers import rooms
 
 app = FastAPI()
