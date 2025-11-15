@@ -1,5 +1,5 @@
 # to access database
-
+from hotel.db.models import Base
 from sqlalchemy.engine.base import Engine
 from sqlalchemy.engine import create_engine
 from sqlalchemy.orm import sessionmaker
