@@ -1,7 +1,10 @@
 from sqlalchemy.ext.declarative import declarative_base # ext for extensions
-from sqlalchemy import Column
+from sqlalchemy import Column, Integer, String, Date, ForeignKey
+from sqlalchemy.sql.schema import ForeignKey
+from sqlalchemy.sql.sqltypes import Date, Integer, String
 from sqlalchemy.orm import relationship
 
+# contain definitions of different entities of the system
 Base = declarative_base() # base where any model can inherit from
 
 # remove @dataclass
@@ -27,6 +30,6 @@ class DBBooking(Base):
     price = Column(Integer, nullable=False)
 
     customer_id = Column(Integer, ForeignKey("customer.id"))
-    customer: relationship(DBCustomer)
-    room_id: Column(Integer, ForeignKey("room.id"))
-    room: relationship(DBRoom)
+    customer = relationship("DBCustomer")
+    room_id = Column(Integer, ForeignKey("room.id"))
+    room = relationship(DBRoom)
