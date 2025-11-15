@@ -6,6 +6,7 @@ from sqlalchemy.orm import sessionmaker
 
 engine: Engine = None # create database engine
 DBSession = sessionmaker() # create session to use the database
+
 def init_db(file: str): # hotel.db is sample data here
     engine = create_engine(file)
 
