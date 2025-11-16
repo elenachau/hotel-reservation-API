@@ -19,7 +19,7 @@ class DBInterface:
     
     def create(self, data: DataObject) -> DataObject:
         session = DBSession()
-        result = self.db_class(**data) # data is already a ditionary
+        result = self.db_class(**data) # data is already a dictionary
         session.add(result)
         session.commit()
         return to_dict(result) # convert to raw data for API to return
