@@ -1,3 +1,5 @@
+from typing import Any, Protocol
+
 DataObject = dict[str, Any]
 
 class DataInterface(Protocol):
