@@ -34,6 +34,7 @@ def create_customer(data: CustomerCreateData):
     session.commit()
     return to_dict(customer) # convert to raw data for API to return
 
+
 def update_customer(customer_id: int, data: CustomerUpdateData):
     session = DBSession()
     customer = session.query(DBCustomer).get(customer_id)
