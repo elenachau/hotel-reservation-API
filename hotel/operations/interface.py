@@ -6,7 +6,7 @@ class DataInterface(Protocol):
     def read_by_id(self, id: int): # read obj fromn id
         ...
     
-    def  read_all(self) -> list[DataObject]:
+    def read_all(self) -> list[DataObject]:
         ...
     
     def create(self, data: DataObject) -> DataObject:
