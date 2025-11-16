@@ -7,6 +7,10 @@ from sqlalchemy.orm import relationship
 # contain definitions of different entities of the system
 Base = declarative_base() # base where any model can inherit from
 
+# convertsan obj to dict
+def to_dict(obj: Base) -> dict[str, Any]:
+    return {c.name: getattr(obj, c.name) for c in obj.__table__.columns}
+
 # remove @dataclass
 class DBCustomer(Base):
     __tablename__ = "customer"
